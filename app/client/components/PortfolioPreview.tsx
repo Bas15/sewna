@@ -37,7 +37,7 @@ export default function PortfolioPreview({
 
   return (
     <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl p-8 w-11/12 md:w-2/3 lg:w-1/2 relative shadow-2xl">
+      <div className="bg-white rounded-2xl p-8 w-11/12 md:w-2/3 lg:w-1/2  relative shadow-2xl">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -69,14 +69,16 @@ export default function PortfolioPreview({
         </div>
 
         {/* Stack Preview */}
-        <div className="mb-6 flex justify-center">
-          <Stack
-            randomRotation
-            sensitivity={180}
-            sendToBackOnClick={false}
-            cardDimensions={{ width: 180, height: 180 }}
-            cardsData={sampleOutfits}
-          />
+        <div className="mb-6 overflow-x-auto overflow-y-hidden">
+          <div className="flex justify-center min-w-max px-4">
+            <Stack
+              randomRotation
+              sensitivity={180}
+              sendToBackOnClick={false}
+              cardDimensions={{ width: 180, height: 180 }}
+              cardsData={sampleOutfits}
+            />
+          </div>
         </div>
 
         {/* Waitlist Message */}
