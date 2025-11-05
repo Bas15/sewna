@@ -18,7 +18,7 @@ export default function FilterBar({ onFilter }: FilterBarProps) {
       <div className="flex flex-col w-full md:w-2/3">
         <input
           type="text"
-          placeholder="Search for designers (e.g. Tolu Adedeji, Bridal Wear, Street Style)"
+          placeholder="Search for designers (e.g. Amara, Bridal Wear, Street Style)"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#00b67f] outline-none transition"

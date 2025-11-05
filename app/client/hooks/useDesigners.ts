@@ -12,7 +12,7 @@ export const useDesigners = () => {
         id: 1,
         name: "Amara Designs",
         specialty: "Bridal & Luxury Couture",
-        location: "Lagos, Nigeria",
+        location: "New york, USA",
         rating: 4.8,
         image:
           "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=500&q=80",
