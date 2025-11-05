@@ -4,6 +4,7 @@ import { useState } from "react";
 import Stack from "./Stack";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { Lightbulb } from "lucide-react";
 
 interface Outfit {
   id: number;
@@ -54,6 +55,13 @@ export default function DesignerPortfolio() {
 
   return (
     <main className="min-h-screen bg-linear-to-b from-white to-[#f9f7f4] text-black px-6 md:px-20 py-10 font-inter">
+      <button
+        onClick={() => router.back()}
+        className="mb-8 flex items-center text-[#00b67f] font-medium hover:text-[#009e6f] transition"
+      >
+        ← Back to Previous Page
+      </button>
+
       <h1 className="text-4xl font-playfair font-bold mb-6">
         Set up your <span className="text-[#00b67f]">Portfolio</span>
       </h1>
@@ -91,7 +99,7 @@ export default function DesignerPortfolio() {
         {categories.map((cat) => (
           <div
             key={cat.id}
-            className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm"
+            className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm relative"
           >
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-2xl font-semibold text-[#00b67f]">
@@ -100,19 +108,34 @@ export default function DesignerPortfolio() {
               <AddOutfitButton categoryId={cat.id} onAdd={handleAddOutfit} />
             </div>
 
-            {/* Outfits Display */}
+            {/* Tooltip instruction for desktop users */}
+            {/* {cat.outfits.length > 0 && (
+              <div className="hidden md:block absolute top-4 left-30 bg-black/80 text-white text-sm px-3 py-1.5 rounded-full shadow-lg animate-fade-in">
+                <span className="flex items-center space-x-2"><Lightbulb />
+                Tip: Swipe to browse or double-click to view all</span>
+              </div>
+            )} */}
+
+            {/* Outfits Display with hover tooltip */}
             {cat.outfits.length > 0 ? (
-              <Stack
-                key={cat.outfits.map((o) => o.id).join("-")}
-                randomRotation={true}
-                sensitivity={180}
-                sendToBackOnClick={false}
-                cardDimensions={{ width: 200, height: 200 }}
-                cardsData={cat.outfits.map((o) => ({
-                  id: o.id,
-                  img: o.img,
-                }))}
-              />
+              <div className="relative group mt-6">
+                {/* Tooltip shows only on hover */}
+                <div className="hidden md:flex absolute -top-10 left-1/2 -translate-x-1/2 bg-black/80 text-white text-sm px-3 py-1.5 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <Lightbulb className="w-4 h-4 mr-2 text-[#00b67f]" />
+                  Tip: Swipe to browse or double-click to view all
+                </div>
+                <Stack
+                  key={cat.outfits.map((o) => o.id).join("-")}
+                  randomRotation={true}
+                  sensitivity={180}
+                  sendToBackOnClick={false}
+                  cardDimensions={{ width: 200, height: 200 }}
+                  cardsData={cat.outfits.map((o) => ({
+                    id: o.id,
+                    img: o.img,
+                  }))}
+                />
+              </div>
             ) : (
               <p className="text-gray-500 italic">No outfits added yet.</p>
             )}

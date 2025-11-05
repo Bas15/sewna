@@ -6,8 +6,10 @@ import { Designer } from "./types/designer";
 import FilterBar from "./components/FilterBar";
 import DesignerCard from "./components/DesignerCard";
 import PortfolioPreview from "./components/PortfolioPreview";
+import { useRouter } from "next/navigation";
 
 export default function ClientPage() {
+  const router = useRouter();
   const { designers } = useDesigners();
   const [filtered, setFiltered] = useState(designers);
   const [selectedDesigner, setSelectedDesigner] = useState<Designer | null>(
@@ -26,6 +28,12 @@ export default function ClientPage() {
 
   return (
     <main className="min-h-screen bg-linear-to-b from-white to-[#f9f7f4] px-6 md:px-20 py-10 text-black font-inter">
+      <button
+        onClick={() => router.back()}
+        className="mb-8 flex items-center text-[#00b67f] font-medium hover:text-[#009e6f] transition"
+      >
+        ← Back to Previous Page
+      </button>
       <h1 className="text-4xl font-playfair font-bold mb-6">
         Find Your <span className="text-[#00b67f]">Perfect Designer</span>
       </h1>
