@@ -19,15 +19,15 @@ export default function PortfolioPreview({
   const sampleOutfits = [
     {
       id: 1,
-      img: "https://images.unsplash.com/photo-1602407294553-6ac9170b33b9?w=500&q=80",
+      img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80",
     },
     {
       id: 2,
-      img: "https://images.unsplash.com/photo-1612444530582-c4c2b7d31a4e?w=500&q=80",
+      img: "https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=500&q=80",
     },
     {
       id: 3,
-      img: "https://images.unsplash.com/photo-1601333142760-dc88b382a8d0?w=500&q=80",
+      img: "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?w=500&q=80&auto=format&fit=crop",
     },
   ];
 
