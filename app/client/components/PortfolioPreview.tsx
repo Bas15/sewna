@@ -27,7 +27,11 @@ export default function PortfolioPreview({
     },
     {
       id: 3,
-      img: "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?w=500&q=80&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=420",
+    },
+    {
+      id: 4,
+      img: "https://images.unsplash.com/photo-1663560455456-7c2fb0c8cfca?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=388",
     },
   ];
 
