@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Stack from "./Stack";
+import Stack from "../../components/Stack";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Lightbulb } from "lucide-react";

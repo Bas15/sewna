@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import TextType from "@/components/TextType";
 
-const images = ["/hero5.webp","/hero2.webp", "/hero3.webp", "/hero4.webp"];
+const images = ["/hero5.webp", "/hero2.webp", "/hero3.webp", "/hero4.webp"];
 
-// "/hero_image.png", 
+// "/hero_image.png",
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
@@ -45,8 +46,22 @@ export default function Home() {
         <div className="max-w-xl space-y-6">
           <h2 className="text-4xl md:text-5xl font-playfair font-extrabold leading-tight">
             Discover your style with{" "}
-            <span className="text-[#00b67f]">professional designers.</span>
+            <span className="text-[#00b67f]">
+              {" "}
+              <TextType
+                text={[
+                  "professional designers.",
+                  "creative experts.",
+                  "fashion innovators.",
+                ]}
+                typingSpeed={75}
+                pauseDuration={1500}
+                showCursor={true}
+                cursorCharacter="|"
+              />
+            </span>
           </h2>
+
           <p className="text-gray-600 text-base md:text-lg leading-relaxed">
             Where creativity meets culture. Connect with independent designers
             to craft styles that reflect your true identity — elegant,

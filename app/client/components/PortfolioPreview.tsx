@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Designer } from "../types/designer";
-import Stack from "@/app/designer/Stack";
+import Stack from "@/components/Stack";
 
 interface PortfolioPreviewProps {
   designer: Designer | null;
